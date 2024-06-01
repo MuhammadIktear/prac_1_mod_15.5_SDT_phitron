@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1 class="text-center mt-5">Album</h1>
+{%load crispy_forms_tags%}
+<form method="post" class="container pt-5">
+    {% csrf_token %}
+    <form>{{form | crispy}}
+    {% if text == 'yes' %}
+    <button class="btn btn-warning btn-sm">Add</button>
+    {% else %}
+    <button class="btn btn-sm mt-2 btn-warning">Save Changes</button>
+    {% endif %}
+    </form>
+</form>
+{%endblock%}
